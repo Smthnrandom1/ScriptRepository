@@ -1,7 +1,16 @@
-local tool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
-tool.Name = "Github Tool"
-tool.RequiresHandle = false
+local Players = game:GetService("Players")
+local lp = Players.LocalPlayer
+local lpMouse = lp:GetMouse()
 
-tool.Activated:Connect(function()
-	print("Github tool activated!")
+local teleportTool = Instance.new("Tool", lp.Backpack)
+teleportTool.Name = "TeleportTool"
+teleportTool.RequiresHandle = false
+
+teleportTool.Activated:Connect(function()
+	if not lp.Character then
+		return 
+	end
+	
+	local mousePosition = lpMouse.Hit.Position
+	lp.Character:MoveTo(mousePosition)
 end)
