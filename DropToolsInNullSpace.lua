@@ -4,9 +4,9 @@ local backpack = lp.Backpack
 
 -- teleport the localplayer high up in the sky
 if lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") then
-	lp.Character.HumanoidRootPart.CFrame = CFrame.new(0, math.huge, 0)
+	lp.Character.HumanoidRootPart.CFrame = CFrame.new(0, 999999999999999, 0)
 elseif lp.Character and not lp.Character:FindFirstChild("HumanoidRootPart") then
-	lp.Character:PivotTo(CFrame.new(0, math.huge, 0))
+	lp.Character:PivotTo(CFrame.new(0, 999999999999999, 0))
 end
 
 -- equip every tool inside the backpack
