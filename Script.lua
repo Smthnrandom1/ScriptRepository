@@ -1,16 +1,9 @@
-local Players = game:GetService("Players")
-local lp = Players.LocalPlayer
-local lpMouse = lp:GetMouse()
-
-local teleportTool = Instance.new("Tool", lp.Backpack)
-teleportTool.Name = "TeleportTool"
-teleportTool.RequiresHandle = false
-
-teleportTool.Activated:Connect(function()
-	if not lp.Character then
-		return 
+for i,v in pairs(workspace.Regen:GetChildren()) do
+	if v:IsA("Tool") then
+		if v:FindFirstChild("Handle") then
+			firetouchinterest(v.Handle, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+			wait(0.1)
+			firetouchinterest(v.Handle, game.Players.LocalPlayer.Character.HumanoidRootPart, 1)
+		end
 	end
-	
-	local mousePosition = lpMouse.Hit.Position
-	lp.Character:MoveTo(mousePosition)
-end)
+end
