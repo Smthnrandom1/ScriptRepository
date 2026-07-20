@@ -7,3 +7,5 @@ for i,v in pairs(workspace.Regen:GetChildren()) do
 		end
 	end
 end
+
+print("done")
